@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+    <style>
+        #messages {
+            height: 300px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Type your message here">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const messagesDiv = document.getElementById("messages");
+
+            if (messageInput.value.trim() !== "") {
+                const message = document.createElement("p");
+                message.innerText = messageInput.value;
+
+                messagesDiv.appendChild(message);
+                messageInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
